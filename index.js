@@ -23,6 +23,10 @@ async fetch(request, env, ctx) {
 			if (!upgradeHeader || upgradeHeader !== 'websocket') {
 				const url = new URL(request.url);
 				switch (url.pathname) {
+				  case '/':
+				    return new Response(`<b>bold</b>`, {
+				      status:200
+				    });
 				  case '/status':
 						return new Response(JSON.stringify(request.cf), { status: 200 });
 					case `/config`: {
