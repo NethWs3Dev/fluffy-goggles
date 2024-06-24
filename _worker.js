@@ -20,15 +20,17 @@ function gg() {
     return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
   });
 
-  let userID = gg();
-  const gen = () => {
-  return gg();
+let userID = gg();
+const gen = () => {
+return gg();
 };
 let proxyIP = '';
 if (!isValidUUID(userID)) {
 	throw new Error('uuid is not valid');
 }
+
 export default {
+  
 async fetch(request, env, ctx) {
 		try {
 			userID = env.UUID || userID;
