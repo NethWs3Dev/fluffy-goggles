@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deploy": "wrangler publish",
-    "dev-vless": "wrangler dev index.js"
+    "start": "wrangler dev index.js"
   },
   "author": "",
   "license": "ISC",
