@@ -6,10 +6,6 @@
 
 import { connect } from 'cloudflare:sockets';
 
-addEventListener('fetch', (event) => {
-  event.respondWith(neth(event.request));
-});
-
 function gg() {
   var d = new Date().getTime();
   var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now() * 1000)) || 0;
@@ -24,6 +20,7 @@ function gg() {
     }
     return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
   });
+}
 
 let userID = gg();
 const gen = () => {
@@ -34,8 +31,8 @@ if (!isValidUUID(userID)) {
 	throw new Error('uuid is not valid');
 }
 
-  
-async function neth(request) {
+export default {
+async fetch(request, env, ctx) {
 		try {
 			const upgradeHeader = request.headers.get('Upgrade');
 			if (!upgradeHeader || upgradeHeader !== 'websocket') {
@@ -67,6 +64,7 @@ async function neth(request) {
 			return new Response(e.toString());
 		}
 	}
+};
 
 
 
@@ -645,4 +643,3 @@ clash-meta
 ################################################################\nModified by Neth
 `;
 }
-
