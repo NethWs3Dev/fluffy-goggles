@@ -5,6 +5,11 @@
 // source: https://github.com/zizifn/edgetunnel
 
 import { connect } from 'cloudflare:sockets';
+
+addEventListener('fetch', (event) => {
+  event.respondWith(neth(event.request));
+});
+
 function gg() {
   var d = new Date().getTime();
   var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now() * 1000)) || 0;
@@ -29,12 +34,9 @@ if (!isValidUUID(userID)) {
 	throw new Error('uuid is not valid');
 }
 
-export default {
   
-async fetch(request, env, ctx) {
+async function neth(request) {
 		try {
-			userID = env.UUID || userID;
-			proxyIP = env.PROXYIP || proxyIP;
 			const upgradeHeader = request.headers.get('Upgrade');
 			if (!upgradeHeader || upgradeHeader !== 'websocket') {
 				const url = new URL(request.url);
@@ -65,7 +67,7 @@ async fetch(request, env, ctx) {
 			return new Response(e.toString());
 		}
 	},
-};
+
 
 
 
