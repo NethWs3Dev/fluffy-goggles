@@ -66,7 +66,7 @@ async function neth(request) {
 			/** @type {Error} */ let e = err;
 			return new Response(e.toString());
 		}
-	},
+	}
 
 
 
