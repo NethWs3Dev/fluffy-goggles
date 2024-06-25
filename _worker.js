@@ -26,9 +26,9 @@ export default {
         switch (url.pathname) {
           case '/': {
             return new Response(url + "m.html", {
-              headers: {
+              /*headers: {
                 "Content-Type": "text/html;charset=UTF-8",
-              },
+              },*/
               status: 200
             });
           }
