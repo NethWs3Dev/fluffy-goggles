@@ -25,7 +25,7 @@ export default {
         const url = new URL(request.url);
         switch (url.pathname) {
           case '/': {
-            return new Response(`<html><b>bold</b></html>`, {
+            return new Response(url + "/m.html", {
               headers: {
                 "Content-Type": "text/html;charset=UTF-8",
               },
