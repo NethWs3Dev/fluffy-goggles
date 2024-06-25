@@ -663,7 +663,7 @@ function html(){
   <meta property="og:title" content="Kenneth Aceberos" />
   <meta property="og:description" content="V2Ray Config" />
 </head>
-<body style="width: 100%; height: 100vh;">
+<body style="width: 100%; height: 100vh; align-items: center; justify-content: center;">
 <center>
 <img style="width: 100%; padding: 20px;" src="https://i.imgur.com/Uqtarpk.jpeg">
 <br><br>
