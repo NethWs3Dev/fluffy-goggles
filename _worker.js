@@ -57,7 +57,7 @@ export default {
                 return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
               });
             }
-            return new Response({ uuid: gg() }, {
+            return new Response(JSON.stringify({ uuid: gg() }), {
               status: 200
             });
           }
@@ -621,17 +621,10 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
  * @returns {string}
  */
 function getVLESSConfig(userID, hostName) {
-  const vlessMain = `vless://${userID}\u0040${hostName}:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}`
-  return `
-################################################################
-v2ray
----------------------------------------------------------------
-${vlessMain}
----------------------------------------------------------------
-################################################################
-clash-meta
----------------------------------------------------------------
-- type: vless
+  const vlessMain = `vless://${userID}\u0040${hostName}:443?remarks=Neth&encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}`
+  return `${vlessMain}
+  
+  - V2Ray Config -
   name: ${hostName}
   server: ${hostName}
   port: 443
@@ -645,7 +638,8 @@ clash-meta
     path: "/?ed=2048"
     headers:
       host: ${hostName}
----------------------------------------------------------------
-################################################################\nModified by Neth
+  
+  ℹ️ | Modified by Neth
+  Source: https://github.com/zizifn/edgetunnel
 `;
 }
