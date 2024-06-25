@@ -664,26 +664,13 @@ function html(){
   <meta property="og:description" content="V2Ray Config" />
 </head>
 <body>
-<script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script type="text/javascript">
-const audio = "https://files.catbox.moe/nh0xzy.mp3";
-let sound = new Howl({
-  src: [audio],
-  autoplay: true,
-  loop: true,
-  format: ['mp3'],
-  volume: 1,
-  onend: () => {}
-});
-sound.play();
-
-setTimeout(() => {
-  Swal.fire("| Modified by Neth |");
-}, 500);
-</script>
 <center>
-<h1>NethPogi</h1>
+<img src="https://i.imgur.com/Uqtarpk.jpeg" width="500" height="500">
+<br>
+<audio controls autoplay>
+  <source src="https://files.catbox.moe/nh0xzy.mp3" type="audio/mp3">
+Your browser does not support the audio element.
+</audio>
 </center>
 </body>
 </html>
