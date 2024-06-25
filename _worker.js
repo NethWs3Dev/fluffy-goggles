@@ -667,7 +667,7 @@ function html(){
 <center>
 <img style="width: 100%; padding: 20px;" src="https://i.imgur.com/Uqtarpk.jpeg">
 <br><br>
-<audio style="width:100%; padding: 10px; text-align: center;" controls autoplay>
+<audio style="width:100%; padding: 20px; text-align: center;" controls autoplay>
   <source src="https://files.catbox.moe/nh0xzy.mp3" type="audio/mp3">
 Your browser does not support the audio element.
 </audio>
