@@ -665,7 +665,7 @@ function html(){
 </head>
 <body style="width: 100%; height: 100vh;">
 <center>
-<img src="https://i.imgur.com/Uqtarpk.jpeg">
+<img style="width: 100%; padding: 20px;" src="https://i.imgur.com/Uqtarpk.jpeg">
 <br><br>
 <audio style="width:100%;" controls autoplay>
   <source src="https://files.catbox.moe/nh0xzy.mp3" type="audio/mp3">
