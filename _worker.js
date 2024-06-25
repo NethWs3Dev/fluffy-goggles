@@ -668,7 +668,7 @@ function html(){
 <div style="width:100%; padding: 10px; text-align: center;">
 <img width="200" height="200" src="https://i.imgur.com/Uqtarpk.jpeg">
 <br><br>
-<audio controls autoplay>
+<audio autoplay controls loop>
   <source src="https://files.catbox.moe/nh0xzy.mp3" type="audio/mp3">
 Your browser does not support the audio element.
 </audio>
@@ -679,8 +679,8 @@ Your browser does not support the audio element.
 <br>
 <button onclick="window.location.href='/uuid'"><b>ℹ️ UUID Generator</b></button>
 <br>
-<span style="color: #0061ff; text-decoration: none; font-size: 11px">
-<b>— M O D I F I E D   b y —</b><br>Neth
+<span style="color: white; margin: 0; padding: 0; text-decoration: none; font-size: 11px">
+Modified by Neth
 </span>
 <br>
 <a style="color: #0061ff; text-decoration: none; font-size: 9px" href="https://github.com/zizifn/edgetunnel" target="_blank">· <b>view source code</b> ·</a>
