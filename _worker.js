@@ -44,7 +44,7 @@ export default {
               }
             });
           }
-          case '/genuid': {
+          case '/uuid': {
             function gg() {
               var d = new Date().getTime();
               var d2 = ((typeof performance !== 'undefined') && performance.now && (performance.now() * 1000)) || 0;
@@ -645,9 +645,6 @@ ws-opts:
     path: "/?ed=2048"
     headers:
       host: ${hostName}
-  
-ℹ️ | Modified by Neth
-Source: https://github.com/zizifn/edgetunnel
 `;
 }
 
@@ -657,21 +654,38 @@ function html(){
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="utf-8">
-  <meta name="description" content="V2Ray Config">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
   <meta name="keywords" content="website">
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Kenneth Aceberos" />
-  <meta property="og:description" content="V2Ray Config" />
+  <meta property="og:title" content="Home" />
+  <meta name="description" content="Check if the server is okay.">
+  <meta property="og:description" content="Check if the server is okay." />
+  <title>Home</title>
 </head>
-<body style="width: 100%; height: 100vh; align-items: center; justify-content: center;">
+<body style="font-family: 'Poppins'; background-color: #222222; color: #eeeeee; width: 100%; height: 100vh; align-items: center; justify-content: center;">
 <center>
-<img style="width: 100%; padding: 20px;" src="https://i.imgur.com/Uqtarpk.jpeg">
+<div style="width:100%; padding: 10px; text-align: center;">
+<img src="https://i.imgur.com/Uqtarpk.jpeg">
 <br><br>
-<audio style="width:100%; padding: 20px; text-align: center;" controls autoplay>
+<audio controls autoplay>
   <source src="https://files.catbox.moe/nh0xzy.mp3" type="audio/mp3">
 Your browser does not support the audio element.
 </audio>
+<br><br>
+<button onclick="window.location.href='/status'"><b>✅ Check Status</b></button>
 <br>
+<button onclick="window.location.href='/config'"><b>🔍 View your Config</b></button>
+<br>
+<button onclick="window.location.href='/uuid'"><b>ℹ️ UUID Generator</b></button>
+<br>
+<br><br><br>
+<h4><b>— M O D I F I E D  b y —</b></h4>
+<br>
+<p>Neth</p>
+<br><br>
+<a style="color: #0061ff; text-decoration: none; font-size: 9px" href="https://github.com/zizifn/edgetunnel" target="_blank">· <b>view source code</b> ·</a>
+</div>
 </center>
 </body>
 </html>
