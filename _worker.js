@@ -25,11 +25,11 @@ export default {
         const url = new URL(request.url);
         switch (url.pathname) {
           case '/': {
-            return new Response(url + "m.html", {
-              /*headers: {
-                "Content-Type": "text/html;charset=UTF-8",
-              },*/
-              status: 200
+            return new Response(html(), {
+              status: 200,
+              headers: {
+                "Content-Type": "text/html;charset=utf-8",
+              }
             });
           }
           case '/status': {
@@ -648,5 +648,44 @@ ws-opts:
   
 ℹ️ | Modified by Neth
 Source: https://github.com/zizifn/edgetunnel
+`;
+}
+
+function html(){
+  return `<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="description" content="V2Ray Config">
+  <meta name="keywords" content="website">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kenneth Aceberos" />
+  <meta property="og:description" content="V2Ray Config" />
+</head>
+<body>
+<script src="https://cdn.jsdelivr.net/npm/howler@2.2.4/dist/howler.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script type="text/javascript">
+const audio = "https://files.catbox.moe/nh0xzy.mp3";
+let sound = new Howl({
+  src: [audio],
+  autoplay: true,
+  loop: true,
+  format: ['mp3'],
+  volume: 1,
+  onend: () => {}
+});
+sound.play();
+
+setTimeout(() => {
+  Swal.fire("| Modified by Neth |");
+}, 500);
+</script>
+<center>
+<h1>NethPogi</h1>
+</center>
+</body>
+</html>
 `;
 }
