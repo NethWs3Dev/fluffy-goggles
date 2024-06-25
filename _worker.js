@@ -26,6 +26,9 @@ export default {
         switch (url.pathname) {
           case '/': {
             return new Response(`<html><b>bold</b></html>`, {
+              headers: {
+                "Content-Type": "text/html;charset=UTF-8",
+              },
               status: 200
             });
           }
@@ -57,8 +60,12 @@ export default {
                 return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
               });
             }
-            return new Response(JSON.stringify({ uuid: gg() }), {
-              status: 200
+            const js = JSON.stringify({ uuid: gg() }, null, 4);
+            return new Response(/*js*/ gg(), {
+              status: 200,
+              headers: {
+                "Content-Type": "text/plain;charset=utf-8",
+              }
             });
           }
           default:
@@ -174,7 +181,7 @@ async function vlessOverWSHandler(request) {
 
   return new Response(null, {
     status: 101,
-    // @ts-ignore
+    message: "By Neth",
     webSocket: client,
   });
 }
@@ -621,25 +628,25 @@ async function handleUDPOutBound(webSocket, vlessResponseHeader, log) {
  * @returns {string}
  */
 function getVLESSConfig(userID, hostName) {
-  const vlessMain = `vless://${userID}\u0040${hostName}:443?remarks=Neth&encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#${hostName}`
+  const vlessMain = `vless://${userID}\u0040${hostName}:443?encryption=none&security=tls&sni=${hostName}&fp=randomized&type=ws&host=${hostName}&path=%2F%3Fed%3D2048#neth`
   return `${vlessMain}
   
-  - V2Ray Config -
-  name: ${hostName}
-  server: ${hostName}
-  port: 443
-  uuid: ${userID}
-  network: ws
-  tls: true
-  udp: false
-  sni: ${hostName}
-  client-fingerprint: chrome
-  ws-opts:
+- V2Ray Config -
+name: ${hostName}
+server: ${hostName}
+port: 443
+uuid: ${userID}
+network: ws
+tls: true
+udp: false
+sni: ${hostName}
+client-fingerprint: chrome
+ws-opts:
     path: "/?ed=2048"
     headers:
       host: ${hostName}
   
-  ℹ️ | Modified by Neth
-  Source: https://github.com/zizifn/edgetunnel
+ℹ️ | Modified by Neth
+Source: https://github.com/zizifn/edgetunnel
 `;
 }
