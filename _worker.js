@@ -663,14 +663,15 @@ function html(){
   <meta property="og:title" content="Kenneth Aceberos" />
   <meta property="og:description" content="V2Ray Config" />
 </head>
-<body>
+<body style="width: 100%; height: 100vh;">
 <center>
 <img src="https://i.imgur.com/Uqtarpk.jpeg">
-<br>
-<audio controls autoplay>
+<br><br>
+<audio style="width:100%;" controls autoplay>
   <source src="https://files.catbox.moe/nh0xzy.mp3" type="audio/mp3">
 Your browser does not support the audio element.
 </audio>
+<br>
 </center>
 </body>
 </html>
